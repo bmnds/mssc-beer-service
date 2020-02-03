@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+
+  inventory:
+    image: mssc-beer-inventory-service
+    ports:
+      - 8082:8082
+    networks:
+      - service-net
+
+  beer:
+    image: mssc-beer-service
+    ports:
+      - 8080:8080
+    networks:
+      - service-net
+    depends_on:
+      - inventory
+    environment:
+      - INVENTORY_HOSTNAME=inventory
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  order:
+    image: mssc-beer-order-service
+    ports:
+      - 8081:8081
+    networks:
+      - service-net
+    depends_on:
+      - beer
+
+networks:
+  service-net:
