@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BrewBeerEvent extends BeerEvent {
 
+    private static final long serialVersionUID = -3756518851327680671L;
+
     public BrewBeerEvent(BeerDto beerDto) {
         super(beerDto);
     }

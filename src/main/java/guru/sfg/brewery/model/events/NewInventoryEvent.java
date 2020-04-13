@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor
 public class NewInventoryEvent extends BeerEvent {
+    private static final long serialVersionUID = -5882304367170514149L;
+
     public NewInventoryEvent(BeerDto beerDto) {
         super(beerDto);
     }

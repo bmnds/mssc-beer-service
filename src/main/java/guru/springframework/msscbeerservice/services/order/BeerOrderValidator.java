@@ -1,17 +1,16 @@
 package guru.springframework.msscbeerservice.services.order;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.springframework.stereotype.Component;
+
 import guru.sfg.brewery.model.events.BeerOrderDto;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by jt on 12/2/19.
  */
-@Slf4j
 @RequiredArgsConstructor
 @Component
 public class BeerOrderValidator {
